@@ -1,49 +1,43 @@
-# CST-305 Project 1 – Visualizing ODEs with SciPy
+# CST-305 Project 3 – Green’s Function and ODE with IVP
 
 ## Overview
-This project models CPU utilization in a computer system using a first-order
-ordinary differential equation (ODE). The solution is computed numerically
-using SciPy and visualized to analyze system performance over time.
 
-## System Context
-CPU utilization represents the fraction of time a processor is actively
-executing tasks. Modeling this metric using ODEs allows continuous analysis
-of system behavior under varying workload conditions.
+This project implements analytical and numerical solutions for two second-order ODE initial value problems using:
 
-## Mathematical Model
-The CPU utilization model is defined as:
+- Green’s Function
+- Undetermined Coefficients
+- Variation of Parameters
+- Numerical RKF (via SciPy’s solve_ivp)
 
-du/dt = λ − μu
+The program computes and visualizes:
 
-where:
-- u(t) is CPU utilization
-- λ is the task arrival rate
-- μ is the CPU service rate
+- Green’s function solutions
+- Numerical solutions
+- Homogeneous solutions
+- Plots for both ODEs
 
-## Requirements
-- Python 3.x
-- NumPy
-- SciPy
-- Matplotlib
+This repository contains the full Python implementation, documentation, and supporting materials for CST-305 Project 3.
 
-## Installation
-Install required packages using:
+---
 
-pip install numpy scipy matplotlib
+## ODEs Solved
 
-## Running the Program
-Execute the program from the command line:
+### ODE 1
+y'' + y = 4  
+y(0) = 0, y'(0) = 0
 
-python cpu_utilization_ode.py
+### ODE 2
+y'' + 4y = t^2  
+y(0) = 0, y'(0) = 0
 
-You will be prompted to enter:
-- Task arrival rate (tasks per second)
-- CPU service rate (tasks per second)
-- Initial CPU utilization (0 to 1)
+Each ODE is solved using:
 
-## Output
-The program displays a 2D plot of CPU utilization versus time, illustrating
-transient and steady-state system behavior.
+- Green’s function convolution
+- Undetermined coefficients
+- Variation of parameters
+- Numerical RKF (SciPy)
 
-## Author
-John Berry
+---
+
+## Repository Structure
+
